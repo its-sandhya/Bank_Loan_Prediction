@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Approval Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+        }
+        label {
+            font-weight: bold;
+        }
+        select, button {
+            width: 100%;
+            padding: 8px;
+            margin: 6px 0 15px 0;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+        }
+        button:hover {
+            background-color: #45a049;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Loan Approval Prediction</h2>
+    <form action="/predict" method="post">
+
+        <!-- Credit History Dropdown -->
+        <label for="Credit_History">Credit History:</label>
+        <select name="Credit_History" id="Credit_History" required>
+            <option value="">Select</option>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select>
+
+        <!-- Applicant Income Dropdown -->
+        <label for="ApplicantIncome">Applicant Income:</label>
+        <select name="ApplicantIncome" id="ApplicantIncome" required>
+            <option value="">Select</option>
+            <!-- Generate values 0–81000 in steps of 1000 -->
+            <!-- You can increase/decrease step as needed -->
+            <script>
+                for (let i = 0; i <= 81000; i += 1000) {
+                    document.write(`<option value="${i}">${i}</option>`);
+                }
+            </script>
+        </select>
+
+        <!-- Loan Amount Dropdown -->
+        <label for="LoanAmount">Loan Amount:</label>
+        <select name="LoanAmount" id="LoanAmount" required>
+            <option value="">Select</option>
+            <script>
+                for (let i = 9; i <= 700; i += 10) {
+                    document.write(`<option value="${i}">${i}</option>`);
+                }
+            </script>
+        </select>
+
+        <!-- Loan Term Dropdown -->
+        <label for="Loan_Amount_Term">Loan Term (months):</label>
+        <select name="Loan_Amount_Term" id="Loan_Amount_Term" required>
+            <option value="">Select</option>
+            <script>
+                for (let i = 12; i <= 480; i += 12) {
+                    document.write(`<option value="${i}">${i}</option>`);
+                }
+            </script>
+        </select>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction_text %}
+        <h3>{{ prediction_text }}</h3>
+    {% endif %}
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
