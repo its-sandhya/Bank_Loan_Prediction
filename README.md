@@ -2,7 +2,7 @@
 
 Predict whether a bank loan will be approved based on applicant details using **Random Forest** and **Flask**.
 
-## 🔹 Live App
+##  Live App
 https://bank-loan-prediction-fppn.onrender.com/
 
 ##  Project Overview
@@ -17,6 +17,4 @@ This project demonstrates a complete workflow:
 - **Backend:** Python, Flask  
 - **Modeling:** Scikit-learn, Pandas, Numpy  
 - **Visualization:** Matplotlib, Seaborn  
-- **Deployment:** Render  
-
-## 🔹 Project Structure
+- **Deployment:** Render 
